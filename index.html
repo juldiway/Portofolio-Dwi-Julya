@@ -524,6 +524,66 @@
             .nav-links { display: none; }
             .hero-title { font-size: 3rem; }
         }
+
+        /* --- Penyesuaian Responsivitas Global --- */
+@media (max-width: 1024px) {
+    section { padding: 80px 5%; } /* Padding lebih kecil untuk tablet */
+    .hero-title { font-size: 4rem; }
+}
+
+@media (max-width: 768px) {
+    /* Navigasi HP */
+    nav { padding: 15px 5%; }
+    .nav-links {
+        display: none; /* Sembunyikan menu teks di HP untuk kesederhanaan, atau bisa buat hamburger menu */
+    }
+    
+    /* Hero Section HP */
+    .hero-title { font-size: 3rem; text-shadow: 3px 3px 0px var(--red); }
+    .hero-subtitle { font-size: 1rem; }
+
+    /* About Section HP */
+    .about-container {
+        grid-template-columns: 1fr; /* Foto dan teks menumpuk vertikal */
+        text-align: center;
+        gap: 30px;
+    }
+    .about-photo-wrapper { max-width: 200px; } /* Foto lebih kecil di HP */
+    .social-links { justify-content: center; flex-wrap: wrap; }
+    
+    /* Skill Section HP */
+    .skill-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    .skill-label { min-width: auto; justify-content: center; }
+    .expertise-tags { grid-template-columns: 1fr; width: 100%; }
+    .software-icons { 
+        grid-template-columns: repeat(3, 1fr); /* 3 ikon per baris di HP */
+        justify-items: center;
+    }
+
+    /* Bento Grid (Vision & Education) HP */
+    .bento-grid { grid-template-columns: 1fr; }
+    
+    /* Portfolio HP */
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .portfolio-item { height: 350px; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 2.5rem; }
+    .section-title { font-size: 2rem; }
+    .software-icons { grid-template-columns: repeat(2, 1fr); } /* 2 ikon per baris di HP kecil */
+}
+
+.content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
     </style>
 </head>
 <body>
