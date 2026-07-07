@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painting | Dwi Julya</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Bungee&display=swap" rel="stylesheet">
+<style>
+:root{--burgundy:#800020;--red:#D00000;--black:#121212;--white:#F5F5F5;--gray:#1E1E1E;}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:Poppins,sans-serif}
+section{padding:90px 8%}
+.hero{height:100vh;background:linear-gradient(45deg,var(--black),var(--burgundy));display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.hero h1{font-family:Bungee,cursive;font-size:5rem;text-shadow:5px 5px var(--red);animation:up 1s}
+.hero p{max-width:650px;margin-top:20px;color:#ddd;animation:up 1.4s}
+@keyframes up{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+.title{font-family:Bungee;font-size:2.5rem;color:var(--red);border-left:8px solid var(--burgundy);padding-left:20px;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.card{position:relative;overflow:hidden;border:2px solid #333;background:var(--gray);border-radius:5px}
+.card img{width:100%;height:360px;object-fit:cover;transition:.5s;filter:grayscale(100%)}
+.card:hover img{transform:scale(1.08);filter:none}
+.overlay{position:absolute;left:0;bottom:-100%;width:100%;padding:20px;background:rgba(128,0,32,.95);transition:.4s}
+.card:hover .overlay{bottom:0}
+.badge{display:inline-block;background:var(--red);padding:5px 12px;font-size:.75rem;font-weight:600;margin-bottom:10px}
+.quote{background:linear-gradient(45deg,#1e1e1e,#800020);text-align:center;padding:70px 10%}
+.quote h2{font-family:Bungee;font-size:2rem}
+.back{display:inline-block;margin-top:40px;padding:12px 30px;background:var(--red);color:#fff;text-decoration:none;font-weight:700}
+.reveal{opacity:0;transform:translateY(50px);transition:1s}
+.reveal.active{opacity:1;transform:none}
+ /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--burgundy);
+        }
+
+        .logo {
+            font-family: 'Bungee', cursive;
+            font-size: 1.5rem;
+            color: var(--red);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--red);
+        }
+
+.view-project-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 22px;
+    background:var(--white);
+    color:var(--black);
+    text-decoration:none;
+    font-weight:700;
+    font-size:.8rem;
+    text-transform:uppercase;
+    border-radius:3px;
+    transition:.3s;
+}
+
+.view-project-btn:hover{
+    background:var(--red);
+    color:var(--white);
+    transform:translateY(-3px);
+}
+
+</style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Dwi Julya</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skill">Skill</a></li>
+            <li><a href="index.html#portofolio">Portofolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+<section class="hero">
+<h1>PAINTING</h1>
+<p>Painting is where emotion becomes visible. A collection of manual and digital artworks exploring surrealism, symbolism, and visual storytelling.</p>
+<a class="back" href="index.html#portofolio">← Back to Portfolio Page</a>
+</section>
+
+<section class="reveal">
+<h2 class="title">Manual Painting</h2>
+<div class="grid">
+<<div class="card">
+    <img src="images/Acrylic.jpg">
+
+    <div class="overlay">
+        <h3>Acrylic</h3>
+
+        <a href="acrylic.html" class="view-project-btn">
+            View
+        </a>
+
+    </div>
+</div>
+<div class="card"><img src="images/Water color painting.jpg"><div class="overlay"><h3>Water Color</h3><span class="badge">View</span></div></div>
+<div class="card"><img src="images/manual3.jpg"><div class="overlay"><h3>Guache</h3><span class="view-project-btn">View</span></div></div>
+</div>
+</section>
+
+<section class="quote">
+<h2>"Every stroke tells a story."</h2>
+</section>
+
+<section class="reveal">
+<h2 class="title">Digital Painting</h2>
+<div class="grid">
+<div class="card"><img src="images/digital1.jpg"><div class="overlay"><span class="badge">Surrealism</span><h3>Current</h3></div></div>
+<div class="card"><img src="images/digital2.jpg"><div class="overlay"><span class="badge">Sketching</span><h3>Aries</h3></div></div>
+<div class="card"><img src="images/digital3.jpg"><div class="overlay"><span class="badge">Illustration</span><h3>Reflection</h3></div></div>
+</div>
+</section>
+
+<script>
+const r=document.querySelectorAll('.reveal');
+window.addEventListener('scroll',()=>{r.forEach(e=>{if(e.getBoundingClientRect().top<window.innerHeight-100)e.classList.add('active');});});
+</script>
+</body>
+</html>
