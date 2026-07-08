@@ -1,0 +1,237 @@
+:root {
+    --bg-dark: #050505;
+    --cyber-pink: #ff00ff;
+    --cyber-blue: #00d2ff;
+    --cyber-purple: #9d00ff;
+    --text-main: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Background Effect */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid var(--cyber-purple);
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cyber-blue);
+    text-shadow: 0 0 10px var(--cyber-blue);
+}
+
+.logo span { color: var(--cyber-pink); }
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 2rem; }
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-main);
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover { color: var(--cyber-pink); text-shadow: 0 0 8px var(--cyber-pink); }
+
+/* Hero Section */
+header {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+    color: var(--cyber-blue);
+    text-shadow: 3px 3px var(--cyber-pink);
+    margin-bottom: 1rem;
+}
+
+.btn-neon {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 2px solid var(--cyber-pink);
+    color: var(--cyber-pink);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 2rem;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+    transition: 0.4s;
+}
+
+.btn-neon:hover {
+    background: var(--cyber-pink);
+    color: white;
+    box-shadow: 0 0 30px var(--cyber-pink);
+}
+
+/* Content Section */
+#about {
+  background-color: #0d0d0d;
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+#about h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #00ffff;
+}
+
+#about p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+/* Portfolio Grid */
+.portfolio { padding: 5rem 5%; }
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--cyber-purple);
+    margin-bottom: 3rem;
+    border-left: 5px solid var(--cyber-blue);
+    padding-left: 15px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: #111;
+    border: 1px solid #333;
+    padding: 10px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    border-color: var(--cyber-blue);
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+}
+
+.img-placeholder {
+    height: 250px;
+    background: linear-gradient(45deg, #1a1a1a, #222);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    color: #444;
+}
+
+.card-info { padding: 1.5rem 0.5rem; }
+.card-info h3 { color: var(--cyber-blue); margin-bottom: 5px; }
+
+/* Contain Section */
+<style>
+#contact {
+  background-color: #0d0d0d;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+#contact h2 {
+  font-size: 36px;
+  color: cyan;
+  margin-bottom: 10px;
+}
+
+#contact p {
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+button {
+  background-color: cyan;
+  color: black;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #00aaaa;
+}
+</style>
+
+<style>
+#footer {
+    text-align: center;
+    padding: 3rem;
+    font-size: 0.8rem;
+    color: #555;
+    border-top: 1px solid #222;
+}
+</style>

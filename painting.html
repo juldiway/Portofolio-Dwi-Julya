@@ -89,68 +89,572 @@ section{padding:90px 8%}
     transform:translateY(-3px);
 }
 
+/* --- Footer dengan Background & Sticky --- */
+        footer {
+            background-color: var(--burgundy); /* Memberikan background warna Burgundy */
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 4px solid var(--red); /* Aksen garis merah tegas */
+            width: 100%;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 992px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .about-photo-wrapper {
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-title { font-size: 3rem; }
+        }
+
+        /* --- Penyesuaian Responsivitas Global --- */
+@media (max-width: 1024px) {
+    section { padding: 80px 5%; } /* Padding lebih kecil untuk tablet */
+    .hero-title { font-size: 4rem; }
+}
+
+@media (max-width: 768px) {
+    /* Navigasi HP */
+    nav { padding: 15px 5%; }
+    .nav-links {
+        display: none; /* Sembunyikan menu teks di HP untuk kesederhanaan, atau bisa buat hamburger menu */
+    }
+    
+    /* Hero Section HP */
+    .hero-title { font-size: 3rem; text-shadow: 3px 3px 0px var(--red); }
+    .hero-subtitle { font-size: 1rem; }
+
+    /* About Section HP */
+    .about-container {
+        grid-template-columns: 1fr; /* Foto dan teks menumpuk vertikal */
+        text-align: center;
+        gap: 30px;
+    }
+    .about-photo-wrapper { max-width: 200px; } /* Foto lebih kecil di HP */
+    .social-links { justify-content: center; flex-wrap: wrap; }
+    
+    /* Skill Section HP */
+    .skill-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    .skill-label { min-width: auto; justify-content: center; }
+    .expertise-tags { grid-template-columns: 1fr; width: 100%; }
+    .software-icons { 
+        grid-template-columns: repeat(3, 1fr); /* 3 ikon per baris di HP */
+        justify-items: center;
+    }
+
+    /* Bento Grid (Vision & Education) HP */
+    .bento-grid { grid-template-columns: 1fr; }
+    
+    /* Portfolio HP */
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .portfolio-item { height: 350px; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 2.5rem; }
+    .section-title { font-size: 2rem; }
+    .software-icons { grid-template-columns: repeat(2, 1fr); } /* 2 ikon per baris di HP kecil */
+}
+
+.content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    /* Navigasi HP agar tetap muncul */
+    nav {
+        flex-direction: column; /* Logo di atas, menu di bawah */
+        padding: 10px 5%;
+        height: auto;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        display: flex; /* Memastikan menu muncul */
+        gap: 15px;
+        overflow-x: auto; /* Bisa digeser jika menu terlalu panjang */
+        width: 100%;
+        justify-content: center;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-links li {
+        margin-left: 0; /* Reset margin dari versi PC */
+    }
+
+    .nav-links a {
+        font-size: 0.75rem; /* Ukuran teks lebih kecil agar muat */
+        white-space: nowrap; /* Teks tidak turun ke bawah */
+    }
+    
+    /* Penyesuaian Hero Section agar tidak tertutup nav yang membesar */
+    #home {
+        padding-top: 120px;
+    }
+
+    /* Penyesuaian About & Skill untuk HP */
+    .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .about-photo-wrapper { max-width: 200px; margin: 0 auto 20px; }
+    .social-links { justify-content: center; }
+    
+    .skill-row { flex-direction: column; text-align: center; }
+    .software-icons { grid-template-columns: repeat(3, 1fr); }
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 5%;
+    background:rgba(18,18,18,.95);
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    border-bottom:2px solid var(--burgundy);
+}
+
+.nav-menu{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.nav-links li{
+    margin-left:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--white);
+    font-weight:600;
+    text-transform:uppercase;
+    font-size:.9rem;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--red);
+}
+
+.back-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 18px;
+    background:var(--burgundy);
+    border:2px solid var(--red);
+    color:var(--white);
+    text-decoration:none;
+    font-size:.85rem;
+    font-weight:600;
+    border-radius:4px;
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:var(--red);
+    transform:translateY(-2px);
+}
+
+@media (max-width:768px){
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+.nav-menu{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.nav-links{
+    gap:15px;
+}
+
+.nav-links li{
+    margin:0;
+}
+
+.nav-links a{
+    font-size:.75rem;
+}
+
+.back-btn{
+    font-size:.75rem;
+    padding:8px 14px;
+}
+
+}
+
+.slider{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-top:30px;
+}
+
+.slides{
+    display:flex;
+    overflow-x:auto;
+    gap:25px;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+    flex:1;
+}
+
+.slides::-webkit-scrollbar{
+    display:none;
+}
+
+.item{
+    min-width:350px;
+    flex-shrink:0;
+    border-radius:8px;
+    overflow:hidden;
+    border:2px solid #333;
+    transition:.35s;
+    background:#1e1e1e;
+}
+
+.item:hover{
+    transform:translateY(-8px);
+    border-color:#D00000;
+}
+
+.item img{
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    display:block;
+    transition:.4s;
+}
+
+.item:hover img{
+    transform:scale(1.05);
+}
+
+.prev,
+.next{
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:#800020;
+    color:white;
+    cursor:pointer;
+    font-size:22px;
+    transition:.3s;
+}
+
+.prev:hover,
+.next:hover{
+    background:#D00000;
+}
+
+.item{
+    position:relative;
+    min-width:350px;
+    flex-shrink:0;
+    overflow:hidden;
+    border-radius:8px;
+    border:2px solid #333;
+    transition:.35s;
+    background:#1e1e1e;
+}
+
+.item img{
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    display:block;
+    transition:.5s;
+}
+
+.item:hover img{
+    transform:scale(1.08);
+}
+
+/* Overlay */
+
+.overlay{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    padding:25px;
+    background:linear-gradient(
+        to top,
+        rgba(18,18,18,.96),
+        rgba(18,18,18,.6),
+        transparent
+    );
+    transform:translateY(100%);
+    transition:.45s;
+}
+
+.item:hover .overlay{
+    transform:translateY(0);
+}
+
+.overlay span{
+    display:inline-block;
+    background:#D00000;
+    padding:6px 12px;
+    font-size:.7rem;
+    font-weight:600;
+    border-radius:20px;
+    margin-bottom:10px;
+}
+
+.overlay h3{
+    font-size:1.4rem;
+    margin-bottom:10px;
+}
+
+.overlay p{
+    color:#ddd;
+    font-size:.9rem;
+    line-height:1.6;
+    margin-bottom:18px;
+}
+
+.overlay a{
+    display:inline-block;
+    padding:10px 22px;
+    background:white;
+    color:black;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+}
+
+.overlay a:hover{
+    background:#D00000;
+    color:white;
+}
+
+.overlay{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:25px;
+    height:38%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.97),
+        rgba(0,0,0,.65),
+        transparent
+    );
+    transform:translateY(100%);
+    transition:.4s ease;
+}
+
 </style>
 </head>
 <body>
     <nav>
-        <div class="logo">Dwi Julya</div>
+
+    <div class="logo">Dwi Julya</div>
+
+    <div class="nav-menu">
+
         <ul class="nav-links">
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#skill">Skill</a></li>
-            <li><a href="index.html#portofolio">Portofolio</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="#header">Header</a></li>
+            <li><a href="#manual">Manual</a></li>
+            <li><a href="#digital">Digital</a></li>
         </ul>
-    </nav>
-<section class="hero">
+
+        <a href="index.html#portofolio" class="back-btn">
+            ← Back to Portfolio
+        </a>
+
+    </div>
+
+</nav>
+
+<section id="header" class="hero">
 <h1>PAINTING</h1>
 <p>Painting is where emotion becomes visible. A collection of manual and digital artworks exploring surrealism, symbolism, and visual storytelling.</p>
-<a class="back" href="index.html#portofolio">← Back to Portfolio Page</a>
+<a class="back" href="painting.html#manual">Let's jump in</a>
 </section>
 
-<section class="reveal">
-<h2 class="title">Manual Painting</h2>
-<div class="grid">
-<div class="card">
-    <img src="images/Acrylic.jpg">
-    <div class="overlay">
-        <h3>Acrylic</h3>
-        <a href="acrylic.html" class="view-project-btn">View</a>
+<section id="manual">
+    <h2 class="title">Manual Painting</h2>
+    <div class="slider">
+        <button class="prev">&#10094;</button>
+        <div class="slides">
+
+            <div class="item">
+            <img src="images/Layout Feed IG Blue-Yellow.jpg" alt="Logo Project">
+                <div class="overlay">
+                    <span>Brand Identity</span>
+                    <p>
+                    A branding project for a mobile photobooth business with a retro newspaper visual concept.
+                    </p>
+                    <a href="#">
+                    View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="item">
+            <img src="images/Layout Feed IG Blue-Yellow.jpg" alt="Logo Project">
+                <div class="overlay">
+                    <span>Brand Identity</span>
+                    <p>
+                    A branding project for a mobile photobooth business with a retro newspaper visual concept.
+                    </p>
+                    <a href="#">
+                    View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="item">
+            <img src="images/logo3.jpg">
+            </div>
+
+            <div class="item">
+            <img src="images/logo4.jpg">
+            </div>
+        </div>
+        <button class="next">&#10095;</button>
     </div>
-</div>
-<div class="card">
-    <img src="images/Water color painting.jpg">
-    <div class="overlay">
-        <h3>Water Color</h3>
-        <a href="watercolor.html" class="view-project-btn">View</a>
-    </div>
-</div>
-<div class="card">
-    <img src="images/Ghibli guache painting.jpg">
-    <div class="overlay">
-        <h3>Gouache</h3>
-        <a href="gouache.html" class="view-project-btn">View</a>
-    </div>
-</div>
-</div>
 </section>
 
-<section class="quote">
-<h2>"Every stroke tells a story."</h2>
+<section id="digital">
+    <h2 class="title">Digital Painting</h2>
+    <div class="slider">
+        <button class="prev">&#10094;</button>
+        <div class="slides">
+
+            <div class="item">
+            <img src="images/Layout Feed IG Blue-Yellow.jpg" alt="Logo Project">
+                <div class="overlay">
+                    <span>Brand Identity</span>
+                    <p>
+                    A branding project for a mobile photobooth business with a retro newspaper visual concept.
+                    </p>
+                    <a href="#">
+                    View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="item">
+            <img src="images/Layout Feed IG Blue-Yellow.jpg" alt="Logo Project">
+                <div class="overlay">
+                    <span>Brand Identity</span>
+                    <p>
+                    A branding project for a mobile photobooth business with a retro newspaper visual concept.
+                    </p>
+                    <a href="#">
+                    View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="item">
+            <img src="images/logo3.jpg">
+            </div>
+
+            <div class="item">
+            <img src="images/logo4.jpg">
+            </div>
+        </div>
+        <button class="next">&#10095;</button>
+    </div>
 </section>
 
-<section class="reveal">
-<h2 class="title">Digital Painting</h2>
-<div class="grid">
-<div class="card"><img src="images/digital1.jpg"><div class="overlay"><span class="badge">Surrealism</span><h3>Current</h3></div></div>
-<div class="card"><img src="images/digital2.jpg"><div class="overlay"><span class="badge">Sketching</span><h3>Aries</h3></div></div>
-<div class="card"><img src="images/digital3.jpg"><div class="overlay"><span class="badge">Illustration</span><h3>Reflection</h3></div></div>
-</div>
-</section>
+<footer>
+        <p>&copy; 2026 Dwi Julya. Bridge the gap between creative chaos and functional design.</p>
+</footer>
 
 <script>
 const r=document.querySelectorAll('.reveal');
 window.addEventListener('scroll',()=>{r.forEach(e=>{if(e.getBoundingClientRect().top<window.innerHeight-100)e.classList.add('active');});});
+
+</script>
+<script>
+
+const sliders=document.querySelectorAll(".slider");
+
+sliders.forEach(slider=>{
+
+const slides=slider.querySelector(".slides");
+
+slider.querySelector(".next").onclick=()=>{
+
+slides.scrollBy({
+
+left:380,
+
+behavior:"smooth"
+
+});
+
+}
+
+slider.querySelector(".prev").onclick=()=>{
+
+slides.scrollBy({
+
+left:-380,
+
+behavior:"smooth"
+
+});
+
+}
+
+});
+
 </script>
 </body>
 </html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UI UX | Dwi Julya</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Bungee&display=swap" rel="stylesheet">
+<style>
+:root{--burgundy:#800020;--red:#D00000;--black:#121212;--white:#F5F5F5;--gray:#1E1E1E;}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:Poppins,sans-serif}
+section{padding:90px 8%}
+.hero{height:100vh;background:linear-gradient(45deg,var(--black),var(--burgundy));display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.hero h1{font-family:Bungee,cursive;font-size:5rem;text-shadow:5px 5px var(--red);animation:up 1s}
+.hero p{max-width:650px;margin-top:20px;color:#ddd;animation:up 1.4s}
+@keyframes up{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+.title{font-family:Bungee;font-size:2.5rem;color:var(--red);border-left:8px solid var(--burgundy);padding-left:20px;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.card{position:relative;overflow:hidden;border:2px solid #333;background:var(--gray);border-radius:5px}
+.card img{width:100%;height:360px;object-fit:cover;transition:.5s;filter:grayscale(100%)}
+.card:hover img{transform:scale(1.08);filter:none}
+.overlay{position:absolute;left:0;bottom:-100%;width:100%;padding:20px;background:rgba(128,0,32,.95);transition:.4s}
+.card:hover .overlay{bottom:0}
+.badge{display:inline-block;background:var(--red);padding:5px 12px;font-size:.75rem;font-weight:600;margin-bottom:10px}
+.quote{background:linear-gradient(45deg,#1e1e1e,#800020);text-align:center;padding:70px 10%}
+.quote h2{font-family:Bungee;font-size:2rem}
+.back{display:inline-block;margin-top:40px;padding:12px 30px;background:var(--red);color:#fff;text-decoration:none;font-weight:700}
+.reveal{opacity:0;transform:translateY(50px);transition:1s}
+.reveal.active{opacity:1;transform:none}
+ /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--burgundy);
+        }
+
+        .logo {
+            font-family: 'Bungee', cursive;
+            font-size: 1.5rem;
+            color: var(--red);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--red);
+        }
+
+.view-project-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 22px;
+    background:var(--white);
+    color:var(--black);
+    text-decoration:none;
+    font-weight:700;
+    font-size:.8rem;
+    text-transform:uppercase;
+    border-radius:3px;
+    transition:.3s;
+}
+
+.view-project-btn:hover{
+    background:var(--red);
+    color:var(--white);
+    transform:translateY(-3px);
+}
+
+/* --- Footer dengan Background & Sticky --- */
+        footer {
+            background-color: var(--burgundy); /* Memberikan background warna Burgundy */
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 4px solid var(--red); /* Aksen garis merah tegas */
+            width: 100%;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 992px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .about-photo-wrapper {
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-title { font-size: 3rem; }
+        }
+
+        /* --- Penyesuaian Responsivitas Global --- */
+@media (max-width: 1024px) {
+    section { padding: 80px 5%; } /* Padding lebih kecil untuk tablet */
+    .hero-title { font-size: 4rem; }
+}
+
+@media (max-width: 768px) {
+    /* Navigasi HP */
+    nav { padding: 15px 5%; }
+    .nav-links {
+        display: none; /* Sembunyikan menu teks di HP untuk kesederhanaan, atau bisa buat hamburger menu */
+    }
+    
+    /* Hero Section HP */
+    .hero-title { font-size: 3rem; text-shadow: 3px 3px 0px var(--red); }
+    .hero-subtitle { font-size: 1rem; }
+
+    /* About Section HP */
+    .about-container {
+        grid-template-columns: 1fr; /* Foto dan teks menumpuk vertikal */
+        text-align: center;
+        gap: 30px;
+    }
+    .about-photo-wrapper { max-width: 200px; } /* Foto lebih kecil di HP */
+    .social-links { justify-content: center; flex-wrap: wrap; }
+    
+    /* Skill Section HP */
+    .skill-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    .skill-label { min-width: auto; justify-content: center; }
+    .expertise-tags { grid-template-columns: 1fr; width: 100%; }
+    .software-icons { 
+        grid-template-columns: repeat(3, 1fr); /* 3 ikon per baris di HP */
+        justify-items: center;
+    }
+
+    /* Bento Grid (Vision & Education) HP */
+    .bento-grid { grid-template-columns: 1fr; }
+    
+    /* Portfolio HP */
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .portfolio-item { height: 350px; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 2.5rem; }
+    .section-title { font-size: 2rem; }
+    .software-icons { grid-template-columns: repeat(2, 1fr); } /* 2 ikon per baris di HP kecil */
+}
+
+.content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    /* Navigasi HP agar tetap muncul */
+    nav {
+        flex-direction: column; /* Logo di atas, menu di bawah */
+        padding: 10px 5%;
+        height: auto;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        display: flex; /* Memastikan menu muncul */
+        gap: 15px;
+        overflow-x: auto; /* Bisa digeser jika menu terlalu panjang */
+        width: 100%;
+        justify-content: center;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-links li {
+        margin-left: 0; /* Reset margin dari versi PC */
+    }
+
+    .nav-links a {
+        font-size: 0.75rem; /* Ukuran teks lebih kecil agar muat */
+        white-space: nowrap; /* Teks tidak turun ke bawah */
+    }
+    
+    /* Penyesuaian Hero Section agar tidak tertutup nav yang membesar */
+    #home {
+        padding-top: 120px;
+    }
+
+    /* Penyesuaian About & Skill untuk HP */
+    .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .about-photo-wrapper { max-width: 200px; margin: 0 auto 20px; }
+    .social-links { justify-content: center; }
+    
+    .skill-row { flex-direction: column; text-align: center; }
+    .software-icons { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ================= UI UX PROJECT ================= */
+
+.project{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+    margin:120px 0;
+}
+
+.project:nth-child(even){
+    flex-direction:row-reverse;
+}
+
+.project-info{
+    flex:1;
+}
+
+.project-info h2{
+    font-family:'Bungee',cursive;
+    font-size:2rem;
+    color:var(--red);
+    margin-bottom:15px;
+}
+
+.project-info h4{
+    color:#aaa;
+    margin-bottom:20px;
+    font-weight:500;
+}
+
+.project-info p{
+    line-height:1.8;
+    color:#ddd;
+    margin-bottom:30px;
+}
+
+.project-image{
+    flex:1;
+}
+
+.carousel{
+    position:relative;
+    overflow:hidden;
+    border-radius:10px;
+    border:2px solid var(--burgundy);
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+
+.carousel img{
+    width:100%;
+    display:none;
+    transition:.5s;
+}
+
+.carousel img.active{
+    display:block;
+    animation:fade .5s;
+}
+
+@keyframes fade{
+from{opacity:0}
+to{opacity:1}
+}
+
+.controls{
+    position:absolute;
+    top:50%;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    transform:translateY(-50%);
+}
+
+.controls button{
+    border:none;
+    background:rgba(0,0,0,.5);
+    color:white;
+    padding:12px 16px;
+    cursor:pointer;
+    font-size:20px;
+    transition:.3s;
+}
+
+.controls button:hover{
+    background:var(--red);
+}
+
+.project-btn{
+    display:inline-block;
+    padding:12px 28px;
+    background:var(--red);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.project-btn:hover{
+    background:white;
+    color:black;
+}
+
+@media(max-width:900px){
+
+.project,
+.project:nth-child(even){
+    flex-direction:column;
+}
+
+}
+.project:nth-child(even){
+    flex-direction:row-reverse;
+}
+
+</style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Dwi Julya</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skill">Skill</a></li>
+            <li><a href="index.html#portofolio">Portofolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+<section class="hero">
+    <h1>UI/UX</h1>
+    <p>Creating user-friendly interfaces that combine clean visuals, thoughtful interactions, and meaningful user experiences.</p>
+    <a class="back" href="index.html#portofolio">← Back to Portfolio Page</a>
+</section>
+
+<section>
+    <div class="project">
+        <div class="project-image">
+                <div class="carousel">
+                    <img src="images/Final Header Computer.jpg" class="active">
+                    <img src="images/Computer About us.jpg">
+                    <img src="images/Final produk 1.jpg">
+                    <img src="images/Final Slide 2.jpg">
+                    <img src="images/Final Product 2.jpg">
+                    <img src="images/Final Produk 3.jpg">
+                    <img src="images/Computer Contact.jpg">
+                    <div class="controls">
+                    <button onclick="prevSlide(0)">❮</button>
+                    <button onclick="nextSlide(0)">❯</button>
+                    </div>
+                </div>
+        </div>
+
+        <div class="project-info">
+            <h2>Goolali</h2>
+            <h4>UI Redesign • Website • 2025</h4>
+            <p>Goolali merupakan website UMKM yang menyediakan produk keripik buah-buahan tropical yang berasal dari Indonesia.
+                Berkontribusi untuk memperkenalkan camilan tradisional Indonesia agar dikenal di pasar dunia. Saat ini, Goolali 
+                Food telah memiliki kehadiran yang signifikan di antara camilan tradisional Indonesia yang terkenal dan banyak 
+                dicari orang, seperti keripik nangka, emping melinjo, rengginang, keripik tempe, ampyang kacang, kacang mete, 
+                wedang uwuh, sale pisang, bawang goreng, rempeyek kacang, maupun produk makanan mentah lainnya.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="project">
+        <div class="project-image">
+            <div class="carousel">
+                <img src="images/Home page iyen tab.jpg" class="active">
+                <img src="images/About us iyen tab.jpg">
+                <img src="images/Product & Contact Tab.jpg">
+                <div class="controls">
+                <button onclick="prevSlide(1)">❮</button>
+                <button onclick="nextSlide(1)">❯</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-info">
+            <h2>Iyen Food</h2>
+            <h4>UI Redesign • Website • 2025</h4>
+            <p>Redesign UI market place Iyen Food yang merupakan produk UMKM yang menyediakan berbagai oleh-oleh khas Lampung.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+        <p>&copy; 2026 Dwi Julya. Bridge the gap between creative chaos and functional design.</p>
+</footer>
+
+
+<script>
+const r=document.querySelectorAll('.reveal');
+window.addEventListener('scroll',()=>{r.forEach(e=>{if(e.getBoundingClientRect().top<window.innerHeight-100)e.classList.add('active');});});
+</script>
+</body>
+</html>
+
+<script>
+
+const reveals=document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll",()=>{
+
+reveals.forEach(el=>{
+
+if(el.getBoundingClientRect().top<window.innerHeight-100){
+
+el.classList.add("active");
+
+}
+
+});
+
+});
+
+const carousels=document.querySelectorAll(".carousel");
+
+let current=[];
+
+carousels.forEach((c,i)=>{
+
+current[i]=0;
+
+});
+
+function show(index,n){
+
+const imgs=carousels[index].querySelectorAll("img");
+
+imgs.forEach(img=>img.classList.remove("active"));
+
+if(n>=imgs.length) current[index]=0;
+
+if(n<0) current[index]=imgs.length-1;
+
+imgs[current[index]].classList.add("active");
+
+}
+
+function nextSlide(index){
+
+current[index]++;
+
+show(index,current[index]);
+
+}
+
+function prevSlide(index){
+
+current[index]--;
+
+show(index,current[index]);
+
+}
+
+</script>
