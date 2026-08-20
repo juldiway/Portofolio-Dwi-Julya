@@ -495,6 +495,52 @@ nav{
     transition:.4s ease;
 }
 
+/* =========================
+   IMAGE VIEWER / LIGHTBOX
+========================= */
+
+.image-viewer{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.95);
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+    padding:30px;
+}
+
+.image-viewer.active{
+    display:flex;
+}
+
+.image-viewer img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+    display:block;
+
+    animation:zoomIn .3s ease;
+}
+
+@keyframes zoomIn{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+
+
 </style>
 </head>
 <body>
@@ -531,38 +577,122 @@ nav{
         <div class="slides">
 
             <div class="item">
-            <img src="images/Layout Feed IG Blue-Yellow.jpg" alt="Logo Project">
+            <img src="images/Water color painting.jpg">
                 <div class="overlay">
-                    <span>Brand Identity</span>
+                    <span>Guache On Papper (2023)</span>
+                    <h3>Cake & Coffee</h3>
                     <p>
-                    A branding project for a mobile photobooth business with a retro newspaper visual concept.
+                    The first guache on papper painting.
                     </p>
-                    <a href="#">
+                    <a href="#" class="view-image">
                     View Project
                     </a>
                 </div>
             </div>
 
             <div class="item">
-            <img src="images/Layout Feed IG Blue-Yellow.jpg" alt="Logo Project">
+            <img src="images/avocado n croissant.jpg">
                 <div class="overlay">
-                    <span>Brand Identity</span>
+                    <span>Guache On Papper (2023)</span>
+                    <h3>Avocado & Croissant</h3>
                     <p>
-                    A branding project for a mobile photobooth business with a retro newspaper visual concept.
+                    The guache on papper painting.
                     </p>
-                    <a href="#">
+                    <a href="#" class="view-image">
                     View Project
                     </a>
                 </div>
             </div>
 
             <div class="item">
-            <img src="images/logo3.jpg">
+            <img src="images/Ghibli guache painting.jpg" alt="guache painting">
+                <div class="overlay">
+                    <span>Guache On Papper (2023)</span>
+                    <h3>Green Field</h3>
+                    <p>
+                    The guache on papper painting that having a ghibli vibe green field.
+                    </p>
+                    <a href="#" class="view-image">
+                    View Project
+                    </a>
+                </div>
             </div>
 
             <div class="item">
-            <img src="images/logo4.jpg">
+            <img src="images/Acrylic.jpg" alt="Acrylic painting">
+                <div class="overlay">
+                    <span>Acrylic On Papper (2024)</span>
+                    <h3>Nature View</h3>
+                    <p>
+                    A nature view that yiu can see thru the paint and paper.
+                    </p>
+                    <a href="#" class="view-image">
+                    View Project
+                    </a>
+                </div>
             </div>
+
+            <div class="item">
+            <img src="images/Lily.jpg">
+                <div class="overlay">
+                    <span>Guache On Papper (2024)</span>
+                    <h3>Lily Flower</h3>
+                    <p>
+                    A minimalist lily flower.
+                    </p>
+                    <a href="#" class="view-image">
+                    View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="item">
+            <img src="images/You used to be the captain for  our ship.jpg">
+                <div class="overlay">
+                    <span>Water Color On Papper (2024)</span>
+                    <h3>You Used To Be The Captain For Our Ship</h3>
+                    <p>
+                    The fist surrealism art made by water color on paper.
+                    </p>
+                    <a href="#" class="view-image">
+                    View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="item">
+            <img src="images/Head in the clouds.jpg">
+                <div class="overlay">
+                    <span>Oil Paste On Papper (2024)</span>
+                    <h3>Head In The Clouds</h3>
+                    <p>
+                    Daydreaming all day, rethinking everything before slowly fall asleep bcs any thoughts comes up like
+                    "What am i suppose to do?"
+                    "How can I reach the cliff of madness?"
+                    Only GOD knows how we got into this step
+                    </p>
+                    <a href="#" class="view-image">
+                    View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="item">
+            <img src="images/Where to lean.jpg">
+                <div class="overlay">
+                    <span>Oil Paste On Papper (2024)</span>
+                    <h3>Where To Lean?</h3>
+                    <p>
+                    I really hope this art can be represent this song, and this song can describe this art✨🤍
+                    Tidak ada tempat bersandar terbaik selain Tuhan🙏🏻
+                    </p>
+                    <a href="#" class="view-image">
+                    View Project
+                    </a>
+                </div>
+            </div>
+
+
         </div>
         <button class="next">&#10095;</button>
     </div>
@@ -575,47 +705,155 @@ nav{
         <div class="slides">
 
             <div class="item">
-            <img src="images/Layout Feed IG Blue-Yellow.jpg" alt="Logo Project">
+            <img src="images/cover depann.png">
                 <div class="overlay">
-                    <span>Brand Identity</span>
+                    <span>Cover Fiction Story</span>
+                    <h3>"The War" Cover</h3>
                     <p>
-                    A branding project for a mobile photobooth business with a retro newspaper visual concept.
+                    This is a front cover of my fiction story called "The War"
                     </p>
-                    <a href="#">
+                    <a href="#" class="view-image">
                     View Project
                     </a>
                 </div>
             </div>
 
             <div class="item">
-            <img src="images/Layout Feed IG Blue-Yellow.jpg" alt="Logo Project">
+            <img src="images/pose protagonis.png" alt="pose protagonis">
                 <div class="overlay">
-                    <span>Brand Identity</span>
+                    <span>Character making</span>
+                    <h3>Protagonis Character</h3>
                     <p>
-                    A branding project for a mobile photobooth business with a retro newspaper visual concept.
+                    Some poses of Main character in my fiction story called "The War"
                     </p>
-                    <a href="#">
+                    <a href="#" class="view-image">
                     View Project
                     </a>
                 </div>
             </div>
 
             <div class="item">
-            <img src="images/logo3.jpg">
+            <img src="images/pose antagonis.png" alt="pose antagonis">
+                <div class="overlay">
+                    <span>Character making</span>
+                    <h3>Antagonis Character</h3>
+                    <p>
+                    Some poses of Antagonis character in my fiction story called "The War"
+                    </p>
+                    <a href="#" class="view-image">
+                    View Project
+                    </a>
+                </div>
             </div>
 
             <div class="item">
-            <img src="images/logo4.jpg">
+            <img src="images/kiping maulana.png">
+                <div class="overlay">
+                    <span>Character making</span>
+                    <h3>Man With Cigarette</h3>
+                    <p>
+                    I draw one of my bestfriend. This is my bestfriend looks like, long hair, sharp eyes, quiete, and smoker.
+                    </p>
+                    <a href="#" class="view-image">
+                    View Project
+                    </a>
+                </div>
             </div>
+
+            <div class="item">
+            <img src="images/tennis ball.png">
+                <div class="overlay">
+                    <span>Surrealism</span>
+                    <h3>Tennis Ball</h3>
+                    <p>
+                    Sometimes we try to fight the current and choose the opposite direction. 
+                    Thats totally valid and positive for ur life. but when it got too difficult 
+                    just let yourself take an adventure thru ur certain direction. Like a tennis ball🥎
+                    </p>
+                    <a href="#" class="view-image">
+                    View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="item">
+            <img src="images/juldiway.jpg">
+                <div class="overlay">
+                    <span>Mascot</span>
+                    <h3>Juldi Way</h3>
+                    <p>
+                    A mascot from myself as an artist painting and designer, she's called Juldi Way.
+                    </p>
+                    <a href="#" class="view-image">
+                    View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="item">
+            <img src="images/Don't let your emotion makes you forget how to stand✨.jpg">
+                <div class="overlay">
+                    <span>Surrealism</span>
+                    <h3>The Night Before Falling</h3>
+                    <p>
+                    Don't let your emotion makes you forget how to stand✨
+                    </p>
+                    <a href="#" class="view-image">
+                    View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="item">
+            <img src="images/Save me into the deep BLUE sea🌊.jpg">
+                <div class="overlay">
+                    <span>Surrealism</span>
+                    <h3>Save me into the deep BLUE sea🌊</h3>
+                    <p>
+                    Tryna looking for somewhere quiete and calm. Save me into the deep BLUE sea🌊
+                    </p>
+                    <a href="#" class="view-image">
+                    View Project
+                    </a>
+                </div>
+            </div>
+
         </div>
         <button class="next">&#10095;</button>
-    </div>
+        </div>
 </section>
 
 <footer>
         <p>&copy; 2026 Dwi Julya. Bridge the gap between creative chaos and functional design.</p>
 </footer>
 
+                        <div class="image-viewer" id="imageViewer">
+                        <img src="images/Water color painting.jpg">
+                        </div>
+
+                        <div class="image-viewer" id="imageViewer">
+                        <img src="images/Ghibli guache painting.jpg">
+                        </div>
+
+                        <div class="image-viewer" id="imageViewer">
+                        <img src="images/Acrylic.jpg">
+                        </div>
+
+                        <div class="image-viewer" id="imageViewer">
+                        <img src="images/Lily.jpg">
+                        </div>
+
+                        <div class="image-viewer" id="imageViewer">
+                        <img src="images/You used to be the captain for  our ship.jpg">
+                        </div>
+
+                        <div class="image-viewer" id="imageViewer">
+                        <img src="images/Head in the clouds.jpg">
+                        </div>
+
+                        <div class="image-viewer" id="imageViewer">
+                        <img src="images/Where to lean.jpg">
+                        </div>
 <script>
 const r=document.querySelectorAll('.reveal');
 window.addEventListener('scroll',()=>{r.forEach(e=>{if(e.getBoundingClientRect().top<window.innerHeight-100)e.classList.add('active');});});
@@ -652,6 +890,42 @@ behavior:"smooth"
 });
 
 }
+
+});
+
+</script>
+
+<script>
+
+const viewButtons = document.querySelectorAll(".view-image");
+const imageViewer = document.getElementById("imageViewer");
+const viewerImage = imageViewer.querySelector("img");
+
+viewButtons.forEach(button => {
+
+    button.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        const projectItem = this.closest(".item");
+        const image = projectItem.querySelector("img");
+
+        viewerImage.src = image.src;
+
+        imageViewer.classList.add("active");
+
+    });
+
+});
+
+
+/* Klik di mana aja untuk menutup gambar */
+
+imageViewer.addEventListener("click", function(){
+
+    imageViewer.classList.remove("active");
+
+    viewerImage.src = "";
 
 });
 
