@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Video Editing | Dwi Julya</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +18,7 @@
     --black: #121212;
     --white: #F5F5F5;
     --gray: #1E1E1E;
-    --muted: #BDBDBD;
+    --muted: #AAAAAA;
 }
 
 * {
@@ -35,33 +36,36 @@ body {
 }
 
 a {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
 }
 
 button {
-    font: inherit;
+    font-family: inherit;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
+
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 18px 7%;
+    z-index: 1000;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    background: rgba(18,18,18,.96);
+
+    padding: 18px 5%;
+    background: rgba(18, 18, 18, 0.96);
     border-bottom: 2px solid var(--burgundy);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
 }
 
 .logo {
     font-family: 'Bungee', sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     white-space: nowrap;
 }
 
@@ -77,13 +81,14 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 22px;
+    align-items: center;
+    gap: 24px;
     list-style: none;
 }
 
 .nav-links a {
-    font-size: .8rem;
-    transition: .3s;
+    font-size: 0.8rem;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
@@ -94,11 +99,10 @@ nav {
     padding: 10px 16px;
     background: var(--burgundy);
     border: 1px solid var(--red);
-    border-radius: 4px;
-    font-size: .8rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    transition: .3s;
     white-space: nowrap;
+    transition: 0.3s;
 }
 
 .back-btn:hover {
@@ -106,311 +110,371 @@ nav {
     transform: translateY(-2px);
 }
 
-/* HERO */
-.hero {
-    min-height: 490px;
-    padding: 170px 7% 75px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/* ================= HEADER ================= */
+
+.page-header {
+    padding: 155px 8% 55px;
     background:
-        radial-gradient(ellipse at 85% 40%,
-        rgba(128,0,32,.23), transparent 48%),
+        radial-gradient(
+            circle at 85% 40%,
+            rgba(128, 0, 32, 0.22),
+            transparent 45%
+        ),
         var(--black);
     border-bottom: 1px solid #292929;
 }
 
 .eyebrow {
     color: var(--red);
-    font-size: .8rem;
-    font-weight: 700;
+    font-size: 0.75rem;
     letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.page-header h1 {
+    font-family: 'Bungee', sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.2;
     margin-bottom: 18px;
 }
 
-.hero h1 {
-    font-family: 'Bungee', sans-serif;
-    font-size: clamp(2.2rem, 6vw, 5rem);
-    line-height: 1.15;
-    margin-bottom: 22px;
-}
-
-.hero h1 span {
+.page-header h1 span {
     color: var(--red);
 }
 
-.hero p {
+.page-header p {
+    max-width: 600px;
     color: var(--muted);
-    max-width: 580px;
+    font-size: 0.9rem;
     line-height: 1.9;
-    font-size: .95rem;
 }
 
-/* PORTFOLIO CONTENT */
-.portfolio {
-    padding: 65px 7% 100px;
+/* ================= VIDEO SECTIONS ================= */
+
+.video-portfolio {
+    padding: 55px 8% 80px;
 }
 
-.section-heading {
-    font-family: 'Bungee', sans-serif;
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    margin-bottom: 25px;
+.video-section {
+    margin-bottom: 65px;
+    scroll-margin-top: 110px;
 }
 
-.section-heading span {
-    color: var(--red);
-}
-
-/* CATEGORY FILTER */
-.filters {
+.section-title {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     gap: 12px;
-    margin-bottom: 55px;
+    margin-bottom: 24px;
 }
 
-.filter-btn {
-    border: 1px solid #444;
-    background: transparent;
-    color: var(--white);
-    padding: 10px 20px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: .78rem;
-    transition: .3s;
+.section-title::before {
+    content: "";
+    width: 4px;
+    height: 27px;
+    background: var(--red);
+    flex-shrink: 0;
 }
 
-.filter-btn:hover,
-.filter-btn.active {
-    background: var(--burgundy);
-    border-color: var(--red);
+.section-title h2 {
+    font-family: 'Bungee', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    color: var(--red);
+    line-height: 1.5;
 }
 
-/* VIDEO GRID */
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 25px;
+.section-title span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
 }
+
+/* ================= CAROUSEL ================= */
+
+.slider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    min-width: 0;
+}
+
+.slides {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    gap: 18px;
+
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 3px 2px 12px;
+}
+
+.slides::-webkit-scrollbar {
+    display: none;
+}
+
+/* VIDEO CARD */
 
 .video-card {
-    min-width: 0;
-    background: var(--gray);
-    border: 1px solid #303030;
-    border-radius: 8px;
+    position: relative;
+    flex: 0 0 190px;
+    aspect-ratio: 3 / 4;
+
     overflow: hidden;
-    transition: transform .35s, border-color .35s;
+    border-radius: 5px;
+    border: 1px solid #383838;
+    background: var(--gray);
+
+    scroll-snap-align: start;
+    transition: transform 0.35s, border-color 0.35s;
 }
 
 .video-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
     border-color: var(--red);
 }
 
-.video-card.featured {
-    grid-row: span 2;
-}
-
-.video-thumb {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    background:
-        radial-gradient(circle at 65% 35%,
-        rgba(208,0,0,.5), transparent 35%),
-        linear-gradient(135deg, #35121d, #111111 65%);
-}
-
-.featured .video-thumb {
-    aspect-ratio: 4 / 5;
-}
-
-.video-thumb img {
+.video-card img {
+    display: block;
     width: 100%;
     height: 100%;
-    display: block;
     object-fit: cover;
-    transition: transform .5s;
+    transition: transform 0.45s;
 }
 
-.video-card:hover .video-thumb img {
+.video-card:hover img {
     transform: scale(1.06);
 }
 
-.video-thumb::after {
+/* THUMBNAIL FALLBACK */
+
+.thumb-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(
+            circle at 70% 30%,
+            rgba(208, 0, 0, 0.42),
+            transparent 45%
+        ),
+        linear-gradient(145deg, #383838, #181818);
+}
+
+.thumb-placeholder span {
+    font-family: 'Bungee', sans-serif;
+    font-size: 2rem;
+    color: rgba(245, 245, 245, 0.16);
+}
+
+.video-card img:not([src]),
+.video-card img[src=""] {
+    display: none;
+}
+
+.video-card::after {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(
         to top,
-        rgba(18,18,18,.72),
-        transparent 60%
+        rgba(18, 18, 18, 0.96) 0%,
+        rgba(18, 18, 18, 0.22) 50%,
+        transparent 100%
     );
     pointer-events: none;
 }
 
-.play-btn {
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 58px;
-    height: 58px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background: rgba(208,0,0,.9);
-    color: white;
-    border: 1px solid rgba(255,255,255,.5);
-    font-size: 1.25rem;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.play-btn:hover {
-    background: var(--burgundy);
-    transform: translate(-50%, -50%) scale(1.12);
-}
-
-.category-label {
-    position: absolute;
-    z-index: 2;
-    top: 16px;
-    left: 16px;
-    background: var(--burgundy);
-    border: 1px solid var(--red);
-    padding: 6px 12px;
-    border-radius: 3px;
-    font-size: .65rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
 .video-info {
-    padding: 22px;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 12px;
+}
+
+.video-category {
+    display: inline-block;
+    max-width: 100%;
+    padding: 5px 9px;
+    margin-bottom: 9px;
+    border-radius: 3px;
+    background: var(--red);
+    color: white;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .video-info h3 {
-    font-size: 1.05rem;
-    margin-bottom: 9px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 5px;
 }
 
 .video-info p {
-    color: var(--muted);
-    font-size: .82rem;
-    line-height: 1.8;
+    font-size: 0.68rem;
+    line-height: 1.6;
+    color: #D0D0D0;
 }
 
-.project-meta {
+/* PLAY BUTTON */
+
+.play-btn {
+    position: absolute;
+    z-index: 3;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.65);
+    background: rgba(128, 0, 32, 0.88);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s, background 0.3s;
+}
+
+.video-card:hover .play-btn,
+.video-card:focus-within .play-btn {
+    opacity: 1;
+}
+
+.play-btn:hover {
+    background: var(--red);
+}
+
+/* CAROUSEL ARROWS */
+
+.slider-btn {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+
     display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
-    color: #999;
-    font-size: .7rem;
-    margin-top: 18px;
-    padding-top: 14px;
-    border-top: 1px solid #383838;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+    background: var(--burgundy);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.video-card[hidden] {
-    display: none;
+.slider-btn:hover {
+    background: var(--red);
+    transform: scale(1.08);
 }
 
-/* CTA */
-.cta {
-    margin: 0 7% 80px;
-    padding: 55px 25px;
+.slider-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+    transform: none;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-cta {
+    margin: 0 8% 70px;
+    padding: 40px 25px;
     text-align: center;
-    background: linear-gradient(120deg, #35000e, #800020);
-    border: 1px solid #a00028;
-    border-radius: 8px;
+    border: 1px solid var(--burgundy);
+    background: linear-gradient(120deg, #26000a, #800020);
 }
 
-.cta h2 {
+.contact-cta h2 {
     font-family: 'Bungee', sans-serif;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    margin-bottom: 14px;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    margin-bottom: 12px;
 }
 
-.cta p {
-    color: #e0d4d7;
-    font-size: .9rem;
-    margin-bottom: 25px;
+.contact-cta p {
+    color: #DDC7CE;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
 }
 
-.cta a {
+.contact-cta a {
     display: inline-block;
-    padding: 12px 26px;
+    padding: 11px 24px;
     background: var(--white);
     color: var(--black);
-    border-radius: 4px;
-    font-size: .85rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    transition: .3s;
+    transition: 0.3s;
 }
 
-.cta a:hover {
+.contact-cta a:hover {
     background: var(--red);
     color: white;
 }
 
-/* VIDEO MODAL */
-.modal {
+footer {
+    padding: 20px 5%;
+    text-align: center;
+    background: var(--burgundy);
+    color: white;
+    font-size: 0.7rem;
+}
+
+/* ================= VIDEO MODAL ================= */
+
+.video-modal {
     position: fixed;
-    inset: 0;
     z-index: 2000;
+    inset: 0;
     display: none;
     align-items: center;
     justify-content: center;
     padding: 25px;
-    background: rgba(0,0,0,.92);
+    background: rgba(0,0,0,0.94);
 }
 
-.modal.open {
+.video-modal.open {
     display: flex;
 }
 
-.modal-content {
+.modal-inner {
     width: min(900px, 100%);
-    position: relative;
 }
 
-.modal video,
-.modal iframe {
+.modal-close {
+    display: block;
+    margin: 0 0 12px auto;
+    padding: 8px 14px;
+    border: 1px solid var(--red);
+    background: var(--burgundy);
+    color: white;
+    cursor: pointer;
+}
+
+.modal-inner video,
+.modal-inner iframe {
+    display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
-    display: block;
     background: black;
     border: 1px solid #444;
 }
 
-.close-modal {
-    display: block;
-    margin: 0 0 12px auto;
-    border: 1px solid #555;
-    border-radius: 4px;
-    padding: 8px 15px;
-    color: white;
-    background: var(--burgundy);
-    cursor: pointer;
-}
+/* ================= RESPONSIVE ================= */
 
-/* FOOTER */
-footer {
-    padding: 25px 7%;
-    border-top: 1px solid #333;
-    text-align: center;
-    color: #888;
-    font-size: .75rem;
-}
-
-/* RESPONSIVE */
-@media (max-width: 850px) {
+@media (max-width: 900px) {
     nav {
-        padding: 15px 5%;
+        padding: 15px 4%;
     }
 
     .nav-right {
@@ -422,26 +486,30 @@ footer {
     }
 
     .nav-links a {
-        font-size: .72rem;
+        font-size: 0.7rem;
     }
 
-    .back-btn {
-        padding: 9px 11px;
-        font-size: .72rem;
-    }
-
-    .portfolio {
+    .video-portfolio {
         padding-left: 5%;
         padding-right: 5%;
     }
 
-    .hero {
+    .page-header {
         padding-left: 5%;
         padding-right: 5%;
     }
 
-    .featured .video-thumb {
-        aspect-ratio: 4 / 5;
+    .video-card {
+        flex-basis: 170px;
+    }
+
+    .slider {
+        gap: 10px;
+    }
+
+    .slider-btn {
+        width: 33px;
+        height: 33px;
     }
 }
 
@@ -449,12 +517,12 @@ footer {
     nav {
         align-items: flex-start;
         flex-direction: column;
-        gap: 12px;
+        gap: 10px;
         padding: 12px 5%;
     }
 
     .logo {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .nav-right {
@@ -464,53 +532,55 @@ footer {
     }
 
     .nav-links {
-        gap: 12px;
+        gap: 10px;
         flex-wrap: wrap;
     }
 
     .nav-links a {
-        font-size: .68rem;
+        font-size: 0.65rem;
     }
 
     .back-btn {
-        font-size: .68rem;
-        padding: 8px 10px;
+        padding: 7px 9px;
+        font-size: 0.65rem;
     }
 
-    .hero {
-        min-height: 420px;
-        padding-top: 160px;
-        padding-bottom: 55px;
+    .page-header {
+        padding-top: 155px;
+        padding-bottom: 40px;
     }
 
-    .portfolio {
-        padding-top: 45px;
-        padding-bottom: 65px;
+    .video-portfolio {
+        padding-top: 40px;
     }
 
-    .video-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    .video-section {
+        margin-bottom: 45px;
     }
 
-    .video-card.featured {
-        grid-row: auto;
+    .slider {
+        gap: 8px;
     }
 
-    .featured .video-thumb {
-        aspect-ratio: 16 / 9;
+    .video-card {
+        flex-basis: 155px;
     }
 
-    .cta {
-        margin: 0 5% 55px;
-        padding: 40px 20px;
+    .slider-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+
+    .contact-cta {
+        margin: 0 5% 45px;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
+        transition: none !important;
     }
 }
 </style>
@@ -520,7 +590,9 @@ footer {
 
 <!-- NAVBAR -->
 <nav>
-    <a href="index.html" class="logo">Dwi Julya</a>
+    <a href="index.html" class="logo">
+        DWI JULYA
+    </a>
 
     <div class="nav-right">
         <ul class="nav-links">
@@ -535,256 +607,368 @@ footer {
     </div>
 </nav>
 
-<section id="header" class="hero">
-    <h1>VIDEO EDITING</h1>
-    <p>Graphic design is the art of communicating ideas through compelling visuals. This collection showcases branding, layouts, social media, and print designs that combine creativity with strategic thinking.</p>
-    <a class="back" href="graphic design.html#socmed">Let's jump in</a>
-</section>
+<!-- HEADER -->
+<header class="page-header">
+    <p class="eyebrow">PORTFOLIO SECTION</p>
 
-<main class="portfolio">
+    <h1>VIDEO <span>EDITING</span></h1>
 
-    <h2 class="section-heading">SELECTED <span>VIDEOS</span></h2>
+    <p>
+        Bringing ideas to life through motion, sound, and visual
+        storytelling. Explore a collection of videos crafted with
+        creativity, rhythm, and purpose.
+    </p>
+</header>
 
+<main class="video-portfolio">
 
-    <!-- VIDEO PROJECTS -->
-    <div class="video-grid">
+    <!-- CATEGORY 1 -->
+    <section class="video-section" id="social">
+        <div class="section-title">
+            <h2>SOCIAL MEDIA DESIGN
+                <span>| 소셜 미디어 영상</span>
+            </h2>
+        </div>
 
-        <!-- FEATURED VIDEO -->
-        <article class="video-card featured" data-category="social">
-            <div class="video-thumb">
-                <!-- Ganti URL gambar dengan thumbnail video lu -->
-                <img
-                    src="images/video-featured.jpg"
-                    alt="Featured social media video thumbnail"
-                    onerror="this.style.display='none'">
+        <div class="slider">
+            <button class="slider-btn prev" aria-label="Previous videos">
+                &#10094;
+            </button>
 
-                <span class="category-label">FEATURED PROJECT</span>
+            <div class="slides">
 
-                <button class="play-btn"
-                    data-video="videos/featured.mp4"
-                    data-type="video"
-                    aria-label="Play featured project">
-                    ▶
-                </button>
+                <article class="video-card">
+                    <div class="thumb-placeholder"><span>01</span></div>
+                    <img src="images/video-social-01.jpg"
+                         alt="Social media video 1"
+                         onerror="this.style.display='none'">
+                    <button class="play-btn"
+                        data-video="videos/social-01.mp4"
+                        aria-label="Play social media video 1">▶</button>
+                    <div class="video-info">
+                        <span class="video-category">SOCIAL MEDIA</span>
+                        <h3>Social Media Campaign</h3>
+                        <p>Short-form video content.</p>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="thumb-placeholder"><span>02</span></div>
+                    <img src="images/video-social-02.jpg"
+                         alt="Social media video 2"
+                         onerror="this.style.display='none'">
+                    <button class="play-btn"
+                        data-video="videos/social-02.mp4"
+                        aria-label="Play social media video 2">▶</button>
+                    <div class="video-info">
+                        <span class="video-category">REELS</span>
+                        <h3>Program Promotion</h3>
+                        <p>Promotional video for digital platforms.</p>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="thumb-placeholder"><span>03</span></div>
+                    <img src="images/video-social-03.jpg"
+                         alt="Social media video 3"
+                         onerror="this.style.display='none'">
+                    <button class="play-btn"
+                        data-video="videos/social-03.mp4"
+                        aria-label="Play social media video 3">▶</button>
+                    <div class="video-info">
+                        <span class="video-category">CONTENT</span>
+                        <h3>Creative Content</h3>
+                        <p>Visual storytelling for social media.</p>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="thumb-placeholder"><span>04</span></div>
+                    <img src="images/video-social-04.jpg"
+                         alt="Social media video 4"
+                         onerror="this.style.display='none'">
+                    <button class="play-btn"
+                        data-video="videos/social-04.mp4"
+                        aria-label="Play social media video 4">▶</button>
+                    <div class="video-info">
+                        <span class="video-category">PROMOTION</span>
+                        <h3>Brand Promotion</h3>
+                        <p>Creative promotional video.</p>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="thumb-placeholder"><span>05</span></div>
+                    <img src="images/video-social-05.jpg"
+                         alt="Social media video 5"
+                         onerror="this.style.display='none'">
+                    <button class="play-btn"
+                        data-video="videos/social-05.mp4"
+                        aria-label="Play social media video 5">▶</button>
+                    <div class="video-info">
+                        <span class="video-category">SOCIAL MEDIA</span>
+                        <h3>Video Project 05</h3>
+                        <p>Editing and visual composition.</p>
+                    </div>
+                </article>
+
             </div>
 
-            <div class="video-info">
-                <h3>Featured Video Project</h3>
-                <p>
-                    A visual storytelling project focused on engaging
-                    audiences through thoughtful editing, pacing,
-                    and sound design.
-                </p>
-                <div class="project-meta">
-                    <span>Social Media</span>
-                    <span>2026</span>
-                </div>
+            <button class="slider-btn next" aria-label="Next videos">
+                &#10095;
+            </button>
+        </div>
+    </section>
+
+    <!-- CATEGORY 2 -->
+    <section class="video-section" id="event">
+        <div class="section-title">
+            <h2>EVENT DOCUMENTATION
+                <span>| 행사 기록 영상</span>
+            </h2>
+        </div>
+
+        <div class="slider">
+            <button class="slider-btn prev" aria-label="Previous videos">
+                &#10094;
+            </button>
+
+            <div class="slides">
+
+                <article class="video-card">
+                    <div class="thumb-placeholder"><span>01</span></div>
+                    <img src="images/video-event-01.jpg"
+                         alt="Event recap video"
+                         onerror="this.style.display='none'">
+                    <button class="play-btn"
+                        data-video="videos/event-01.mp4"
+                        aria-label="Play event video 1">▶</button>
+                    <div class="video-info">
+                        <span class="video-category">EVENT</span>
+                        <h3>Event Recap</h3>
+                        <p>Capturing the highlights of an event.</p>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="thumb-placeholder"><span>02</span></div>
+                    <img src="images/video-event-02.jpg"
+                         alt="Workshop documentation"
+                         onerror="this.style.display='none'">
+                    <button class="play-btn"
+                        data-video="videos/event-02.mp4"
+                        aria-label="Play event video 2">▶</button>
+                    <div class="video-info">
+                        <span class="video-category">WORKSHOP</span>
+                        <h3>Workshop Documentation</h3>
+                        <p>Documenting activities and key moments.</p>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="thumb-placeholder"><span>03</span></div>
+                    <img src="images/video-event-03.jpg"
+                         alt="Community event video"
+                         onerror="this.style.display='none'">
+                    <button class="play-btn"
+                        data-video="videos/event-03.mp4"
+                        aria-label="Play event video 3">▶</button>
+                    <div class="video-info">
+                        <span class="video-category">COMMUNITY</span>
+                        <h3>Community Highlights</h3>
+                        <p>Stories and moments from the community.</p>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="thumb-placeholder"><span>04</span></div>
+                    <img src="images/video-event-04.jpg"
+                         alt="Event video 4"
+                         onerror="this.style.display='none'">
+                    <button class="play-btn"
+                        data-video="videos/event-04.mp4"
+                        aria-label="Play event video 4">▶</button>
+                    <div class="video-info">
+                        <span class="video-category">RECAP</span>
+                        <h3>Event Project 04</h3>
+                        <p>Event editing and storytelling.</p>
+                    </div>
+                </article>
+
             </div>
-        </article>
 
-        <!-- VIDEO 02 -->
-        <article class="video-card" data-category="event">
-            <div class="video-thumb">
-                <img src="images/video-event.jpg"
-                    alt="Event recap thumbnail"
-                    onerror="this.style.display='none'">
+            <button class="slider-btn next" aria-label="Next videos">
+                &#10095;
+            </button>
+        </div>
+    </section>
 
-                <span class="category-label">EVENT</span>
+    <!-- CATEGORY 3 -->
+    <section class="video-section" id="motion">
+        <div class="section-title">
+            <h2>MOTION GRAPHIC
+                <span>| 모션 그래픽</span>
+            </h2>
+        </div>
 
-                <button class="play-btn"
-                    data-video="videos/event-recap.mp4"
-                    data-type="video"
-                    aria-label="Play event recap">
-                    ▶
-                </button>
+        <div class="slider">
+            <button class="slider-btn prev" aria-label="Previous videos">
+                &#10094;
+            </button>
+
+            <div class="slides">
+
+                <article class="video-card">
+                    <div class="thumb-placeholder"><span>01</span></div>
+                    <img src="images/video-motion-01.jpg"
+                         alt="Motion graphic video 1"
+                         onerror="this.style.display='none'">
+                    <button class="play-btn"
+                        data-video="videos/motion-01.mp4"
+                        aria-label="Play motion graphic 1">▶</button>
+                    <div class="video-info">
+                        <span class="video-category">MOTION</span>
+                        <h3>Typography Animation</h3>
+                        <p>Animated typography and transitions.</p>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="thumb-placeholder"><span>02</span></div>
+                    <img src="images/video-motion-02.jpg"
+                         alt="Motion graphic video 2"
+                         onerror="this.style.display='none'">
+                    <button class="play-btn"
+                        data-video="videos/motion-02.mp4"
+                        aria-label="Play motion graphic 2">▶</button>
+                    <div class="video-info">
+                        <span class="video-category">ANIMATION</span>
+                        <h3>Graphic Animation</h3>
+                        <p>Motion design with bold visual elements.</p>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="thumb-placeholder"><span>03</span></div>
+                    <img src="images/video-motion-03.jpg"
+                         alt="Motion graphic video 3"
+                         onerror="this.style.display='none'">
+                    <button class="play-btn"
+                        data-video="videos/motion-03.mp4"
+                        aria-label="Play motion graphic 3">▶</button>
+                    <div class="video-info">
+                        <span class="video-category">EXPERIMENTAL</span>
+                        <h3>Motion Experiment</h3>
+                        <p>Exploring movement, rhythm, and visuals.</p>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="thumb-placeholder"><span>04</span></div>
+                    <img src="images/video-motion-04.jpg"
+                         alt="Motion graphic video 4"
+                         onerror="this.style.display='none'">
+                    <button class="play-btn"
+                        data-video="videos/motion-04.mp4"
+                        aria-label="Play motion graphic 4">▶</button>
+                    <div class="video-info">
+                        <span class="video-category">MOTION</span>
+                        <h3>Motion Project 04</h3>
+                        <p>Creative motion and visual storytelling.</p>
+                    </div>
+                </article>
+
             </div>
-            <div class="video-info">
-                <h3>Event Recap</h3>
-                <p>A recap video capturing key moments and atmosphere.</p>
-                <div class="project-meta">
-                    <span>Event Documentation</span>
-                    <span>2026</span>
-                </div>
-            </div>
-        </article>
 
-        <!-- VIDEO 03 -->
-        <article class="video-card" data-category="motion">
-            <div class="video-thumb">
-                <img src="images/video-motion.jpg"
-                    alt="Motion graphic thumbnail"
-                    onerror="this.style.display='none'">
+            <button class="slider-btn next" aria-label="Next videos">
+                &#10095;
+            </button>
+        </div>
+    </section>
 
-                <span class="category-label">MOTION GRAPHIC</span>
-
-                <button class="play-btn"
-                    data-video="videos/motion-graphic.mp4"
-                    data-type="video"
-                    aria-label="Play motion graphic">
-                    ▶
-                </button>
-            </div>
-            <div class="video-info">
-                <h3>Motion Graphic</h3>
-                <p>Typography and animated visuals brought together.</p>
-                <div class="project-meta">
-                    <span>Motion Design</span>
-                    <span>2026</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- VIDEO 04 -->
-        <article class="video-card" data-category="social">
-            <div class="video-thumb">
-                <img src="images/video-reels.jpg"
-                    alt="Social media reels thumbnail"
-                    onerror="this.style.display='none'">
-
-                <span class="category-label">SOCIAL MEDIA</span>
-
-                <button class="play-btn"
-                    data-video="videos/social-reels.mp4"
-                    data-type="video"
-                    aria-label="Play social media video">
-                    ▶
-                </button>
-            </div>
-            <div class="video-info">
-                <h3>Social Media Content</h3>
-                <p>Short-form content designed for digital audiences.</p>
-                <div class="project-meta">
-                    <span>Reels / Short Video</span>
-                    <span>2026</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- VIDEO 05 -->
-        <article class="video-card" data-category="event">
-            <div class="video-thumb">
-                <img src="images/video-documentation.jpg"
-                    alt="Video documentation thumbnail"
-                    onerror="this.style.display='none'">
-
-                <span class="category-label">DOCUMENTATION</span>
-
-                <button class="play-btn"
-                    data-video="videos/documentation.mp4"
-                    data-type="video"
-                    aria-label="Play documentation video">
-                    ▶
-                </button>
-            </div>
-            <div class="video-info">
-                <h3>Video Documentation</h3>
-                <p>Visual documentation with a clear and cohesive flow.</p>
-                <div class="project-meta">
-                    <span>Videography & Editing</span>
-                    <span>2026</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- VIDEO 06 -->
-        <article class="video-card" data-category="other">
-            <div class="video-thumb">
-                <img src="images/video-experiment.jpg"
-                    alt="Creative video experiment thumbnail"
-                    onerror="this.style.display='none'">
-
-                <span class="category-label">EXPERIMENTAL</span>
-
-                <button class="play-btn"
-                    data-video="videos/experimental.mp4"
-                    data-type="video"
-                    aria-label="Play experimental video">
-                    ▶
-                </button>
-            </div>
-            <div class="video-info">
-                <h3>Creative Experiment</h3>
-                <p>An experimental approach to editing and visual rhythm.</p>
-                <div class="project-meta">
-                    <span>Creative Editing</span>
-                    <span>2026</span>
-                </div>
-            </div>
-        </article>
-
-    </div>
 </main>
 
 <footer>
-    <p>© 2026 Dwi Julya. Bridge the gap between creative chaos and functional design.</p>
+    © 2026 Dwi Julya. Bridging the gap between creative chaos and functional design.
 </footer>
 
 <!-- VIDEO POPUP -->
-<div class="modal" id="videoModal" role="dialog"
-    aria-modal="true" aria-label="Video player">
-    <div class="modal-content">
-        <button class="close-modal" id="closeModal">✕ Close</button>
+<div class="video-modal" id="videoModal"
+     role="dialog" aria-modal="true" aria-label="Video player">
+    <div class="modal-inner">
+        <button class="modal-close" id="modalClose">✕ CLOSE</button>
         <video id="modalVideo" controls playsinline></video>
     </div>
 </div>
 
 <script>
-// CATEGORY FILTER
-const filterButtons = document.querySelectorAll(".filter-btn");
-const videoCards = document.querySelectorAll(".video-card");
+// HORIZONTAL CAROUSEL
+document.querySelectorAll(".slider").forEach(slider => {
+    const slides = slider.querySelector(".slides");
+    const prev = slider.querySelector(".prev");
+    const next = slider.querySelector(".next");
 
-filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const filter = button.dataset.filter;
+    function updateButtons() {
+        prev.disabled = slides.scrollLeft <= 2;
 
-        filterButtons.forEach(btn => btn.classList.remove("active"));
-        button.classList.add("active");
+        next.disabled =
+            slides.scrollLeft + slides.clientWidth >=
+            slides.scrollWidth - 2;
+    }
 
-        videoCards.forEach(card => {
-            const matches =
-                filter === "all" ||
-                card.dataset.category === filter;
-
-            card.hidden = !matches;
+    prev.addEventListener("click", () => {
+        slides.scrollBy({
+            left: -slides.clientWidth * 0.8,
+            behavior: "smooth"
         });
     });
+
+    next.addEventListener("click", () => {
+        slides.scrollBy({
+            left: slides.clientWidth * 0.8,
+            behavior: "smooth"
+        });
+    });
+
+    slides.addEventListener("scroll", updateButtons);
+    window.addEventListener("resize", updateButtons);
+
+    updateButtons();
 });
 
 // VIDEO POPUP
 const modal = document.getElementById("videoModal");
 const modalVideo = document.getElementById("modalVideo");
-const closeModal = document.getElementById("closeModal");
+const modalClose = document.getElementById("modalClose");
 
 document.querySelectorAll(".play-btn").forEach(button => {
     button.addEventListener("click", () => {
         const videoURL = button.dataset.video;
 
-        if (!videoURL || videoURL.includes("your-video-url")) {
-            alert("Tambahkan alamat file video lu terlebih dahulu.");
-            return;
-        }
+        if (!videoURL) return;
 
         modalVideo.src = videoURL;
         modal.classList.add("open");
+
         modalVideo.play().catch(() => {});
     });
 });
 
-function hideModal() {
+function closeVideo() {
     modalVideo.pause();
     modalVideo.removeAttribute("src");
     modalVideo.load();
     modal.classList.remove("open");
 }
 
-closeModal.addEventListener("click", hideModal);
+modalClose.addEventListener("click", closeVideo);
 
 modal.addEventListener("click", event => {
-    if (event.target === modal) hideModal();
+    if (event.target === modal) closeVideo();
 });
 
 document.addEventListener("keydown", event => {
-    if (event.key === "Escape") hideModal();
+    if (event.key === "Escape") closeVideo();
 });
 </script>
 
